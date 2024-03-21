@@ -10,27 +10,27 @@ public class Usuario {
     private Integer id;
 //ACTUALIZAR TODOS LOS DATOS DE NUL O NO
     @Column(name="nombres",nullable = false,length = 50)
-    private String nombres;
-    @Column(name = "apellidos",nullable = false,length = 50)
-    private String apellidos;
+    private String nombres; //no vacio-solo letras espacios-long mas 50 car
+    @Column(name = "apellidos",nullable = true,length = 50)
+    private String apellidos; //no validar nada
     @Column(name = "cedula",nullable = false,length = 50)
-    private String cedula;
+    private String cedula;// solo numeros sin espacios-no vacio-longitud 50cr
     @Column(name = "correo",nullable = false,length = 50)
-    private String correo;
-    @Column(name = "direccion",nullable = false,length = 50)
-    private String direccion;
+    private String correo;//no vacio y formato de correo
+    @Column(name = "direccion",nullable = true,length = 50)
+    private String direccion;//no se valida
     @Column(name = "sexo",nullable = true,length = 20)
-    private String sexo;
+    private String sexo;//solo debe contener las palaras (masculino/femenino// )
     @Column(name = "medioPago",nullable = false,length = 50)
-    private String medioPago;
+    private String medioPago;//no se valida
     @Column(name = "pais",nullable = false,length = 50)
-    private String pais;
+    private String pais;//no se valida
     @Column(name = "departamento",nullable = false,length = 50)
-    private String departamento;
+    private String departamento;//no se valida
     @Column(name = "munucipio",nullable = false,length = 50)
-    private String municipio;
+    private String municipio;//no se valida
     @Column(name = "codigoPostal",nullable = false,length = 50)
-    private String codigoPostal;
+    private String codigoPostal;//solo numeros no vacio
     public Usuario() {
     }
 //poner construcctores en cada tabla

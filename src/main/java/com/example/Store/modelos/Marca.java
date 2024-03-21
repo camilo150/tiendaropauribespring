@@ -13,13 +13,13 @@ public class Marca {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "nombreMarca",nullable = false,length = 50)
-    private String nombreMarca;
+    private String nombreMarca;//no vacio y la misma mrd
     @Column(name = "nit",nullable = false,length = 50)
-    private String nit;
+    private String nit;//solo numeros y no vacio
     @Column(name = "anoCreacion",nullable = true,length = 50)
-    private LocalDate anoCreacion;
+    private LocalDate anoCreacion;//formato tradicional
     @Column(name = "sedePrincipal",nullable = true,length = 50)
-    private String sedePrincipal;
+    private String sedePrincipal;//no se valida
 
     public Marca() {
     }

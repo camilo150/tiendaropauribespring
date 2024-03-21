@@ -10,25 +10,25 @@ public class Producto {
     private Integer id;
     @Column(name = "nombreProducto",nullable = false,length = 50)
 
-    private String nombreProducto;
+    private String nombreProducto;//no vacio la misma mrd
     @Column(name = "referencia",nullable = true,length = 50)
 
-    private String referencia;
+    private String referencia;//no vacio log 14
     @Column(name = "talla",nullable = false,length = 50)
 
-    private String talla;
+    private String talla;//solo letras y longitud 4
     @Column(name = "cantidadBodega",nullable = false)
 
-    private Integer cantidadBodega;
+    private Integer cantidadBodega;//solo numeros positivos
     @Column(name = "precioUnitario",nullable = false)
 
-    private Integer precioUnitario;
+    private Integer precioUnitario;//solo numeros positivos
     @Column(name = "descripcion",nullable = true,length = 50)
 
-    private String descripcion;
+    private String descripcion;//solo letras esppacios log 50
     @Column(name = "fotografia",nullable = false,length = 700)
 
-    private String fotografia;
+    private String fotografia;//solo letras y numeros sin espacios
 
     public Producto() {
     }
