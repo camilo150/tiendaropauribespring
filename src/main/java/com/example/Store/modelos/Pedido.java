@@ -2,67 +2,35 @@ package com.example.Store.modelos;
 
 import jakarta.persistence.*;
 
-import java.awt.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "marcas")
-
-public class Marca {
+@Table(name = "pedidos")
+public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_marca;
-    @Column(name = "nombreMarca",nullable = false,length = 25)
-    private String nombreMarca;//obligatorio con espacios long-max 50
-    @Column(name = "nit",nullable = false,length = 25)
-    private String nit;//obligatorio solo numeros long-max 10
-    @Column(name = "anoCreacion",nullable = false)
-    private LocalDate anoCreacion;//obligatorio
-    @Column(name = "sedePrincipal",nullable = false,length = 25)
-    private String sedePrincipal;//no se valida
+    private Integer id_pedido;
+@Column(name ="FechaYHora",nullable = false )
+    private LocalDateTime FechaYHora;//obligatorio y formato internacional
 
-    public Marca() {
+    @ManyToOne
+    @JoinColumn(name = "id_usuario",referencedColumnName = "id_usuario")//se respeta el nombre de la tabla con la que me quiero asociar
+    Usuario usuario; // nombre de la tabala con la que me quiero asociarsiempr3e vba a ser primal la relacion muchos y donde esté muchos me paro
+
+    public Pedido() {
     }
 
-    public Marca(Integer id, String nombreMarca, String nit, LocalDate anoCreacion, String sedePrincipal) {
-        this.id_marca = id;
-        this.nombreMarca = nombreMarca;
-        this.nit = nit;
-        this.anoCreacion = anoCreacion;
-        this.sedePrincipal = sedePrincipal;
+    public Pedido(Integer id, LocalDateTime fechaYHora) {
+        this.id_pedido = id;
+        FechaYHora = fechaYHora;
     }
 
 
-    public String getNombreMarca() {
-        return nombreMarca;
+    public LocalDateTime getFechaYHora() {
+        return FechaYHora;
     }
 
-    public void setNombreMarca(String nombreMarca) {
-        this.nombreMarca = nombreMarca;
-    }
-
-    public String getNit() {
-        return nit;
-    }
-
-    public void setNit(String nit) {
-        this.nit = nit;
-    }
-
-    public LocalDate getAnoCreacion() {
-        return anoCreacion;
-    }
-
-    public void setAnoCreacion(LocalDate anoCreacion) {
-        this.anoCreacion = anoCreacion;
-    }
-
-    public String getSedePrincipal() {
-        return sedePrincipal;
-    }
-
-    public void setSedePrincipal(String sedePrincipal) {
-        this.sedePrincipal = sedePrincipal;
+    public void setFechaYHora(LocalDateTime fechaYHora) {
+        FechaYHora = fechaYHora;
     }
 }
-
